@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="messageTabContainerVM" type="com.health.app.modules.messagetabcontainer.data.viewmodel.MessageTabContainerVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameSchedule"
+        android:layout_height="match_parent" android:layout_width="match_parent">
+        <LinearLayout android:id="@+id/linearThirtyEight"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+            <androidx.appcompat.widget.Toolbar
+                android:gravity="center_horizontal"
+                android:id="@+id/toolbarAppBar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" app:contentInsetStart="0dp">
+                <FrameLayout android:id="@+id/frameTwentyEight"
+                    android:layout_height="@dimen/_31pxv" android:layout_width="match_parent">
+                    <ImageView android:id="@+id/imageImage"
+                        android:layout_gravity="bottom|end"
+                        android:layout_height="@dimen/_16pxh"
+                        android:layout_width="@dimen/_4pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_more_icon"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_more_icon"/>
+                    <LinearLayout android:id="@+id/linearAppBar"
+                        android:layout_gravity="top|center"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent" android:orientation="horizontal">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtSchedule"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{messageTabContainerVM.messageTabContainerModel.txtSchedule}"
+                            style="@style/txtIntersemibold24" tools:text="@string/lbl_messages"/>
+                        <ImageView android:id="@+id/imageImage1"
+                            android:layout_height="@dimen/_20pxh"
+                            android:layout_width="@dimen/_20pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_component_5_onprimary"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_component_5_onprimary"/>
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <LinearLayout android:id="@+id/linearMessage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <com.google.android.material.tabs.TabLayout
+                    android:gravity="center_horizontal"
+                    android:id="@+id/tabLayoutTabview"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:tabBackground="@drawable/selector_bg_name_cyan_300_radius_8"
+                    app:tabIndicatorColor="@android:color/transparent"
+                    app:tabIndicatorHeight="0dp" app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                    app:tabTextColor="@color/{&quot;name&quot;:&quot;onPrimary&quot;}" style="@style/groupStylenamegray_50_1"/>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:gravity="center_horizontal"
+                    android:id="@+id/viewPagerTabBarView"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" android:layout_width="match_parent"/>
+            </LinearLayout>
+            <FrameLayout android:gravity="center_horizontal"
+                android:id="@+id/frameBottomBar"
+                android:layout_height="wrap_content" android:layout_width="match_parent">
+                <LinearLayout android:id="@+id/linearTwentySeven"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:id="@+id/linearHome"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageHome"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_width="@dimen/_19pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_nav_home_gray_500"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_nav_home_gray_500"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtHome"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{messageTabContainerVM.messageTabContainerModel.txtHome}"
+                            style="@style/txtIntermedium8_2" tools:text="@string/lbl_home"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/linearMessage1"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageMessages"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_22pxh"
+                            android:layout_width="@dimen/_22pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_nav_messages_cyan_300"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_nav_messages_cyan_300"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtMessages"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{messageTabContainerVM.messageTabContainerModel.txtMessages}"
+                            style="@style/txtIntermedium8" tools:text="@string/lbl_messages"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/linearAppointment"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageAppointment"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_23pxh"
+                            android:layout_width="@dimen/_22pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_nav_appointment"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_nav_appointment"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtAppointment"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{messageTabContainerVM.messageTabContainerModel.txtAppointment}"
+                            style="@style/txtIntermedium8_2" tools:text="@string/lbl_appointment"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/linearProfile"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp" android:orientation="vertical">
+                        <ImageView android:id="@+id/imageProfile"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_21pxh"
+                            android:layout_width="@dimen/_20pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_nav_profile"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_nav_profile"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/txtProfile"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{messageTabContainerVM.messageTabContainerModel.txtProfile}"
+                            style="@style/txtIntermedium8_2" tools:text="@string/lbl_profile"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:backgroundTint="@color/{&quot;name&quot;:&quot;cyan_300&quot;}"
+            android:id="@+id/floatingBtnFloatingActionButton"
+            android:layout_gravity="bottom|end"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fabCustomSize="@dimen/_55pxh"
+            app:srcCompat="@drawable/img_user_primary_55x55" app:tint="@color/{&quot;name&quot;:&quot;primary&quot;}"/>
+    </FrameLayout>
+</layout>
